@@ -1,0 +1,15 @@
+git init //criar um repositorio local
+git branch -M "main" //muda o nome da branch para main
+git add . || git add nome-do-arquivo.txt //adiciona os arquivos do working directory para o stage
+git commit -m "titulo do commit" //faz o commit 
+git status 
+git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git //seu repositório local sabe q existe um repositório remoto chamado origin nessa url
+git push -u origin main //linka e sobe os arquivos do seu repositório local para o repositorio remoto e linka eles
+
+git branch nome-da-branch // cria uma nova branch
+git checkout nome-da-branch //troca de branch 
+git checkout -b "nome-da-branch" //cria uma nova branch e vai para ela
+git push origin nome-da-branch //envia os commits da sua branch local chamada nome-da-branch para a branch nome-da-branch no repositório remoto chamado origin.
+git merge nome-da-branch //mescla a branch que você está com a branch selecionada
+git clone https://github.com/seu-usuario/nome-do-repositorio.git //clone qualquer repositorio para a sua maquina
+git pull //atualiza seu repositório local com as últimas mudanças que estão no repositório remoto

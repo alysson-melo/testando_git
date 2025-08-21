@@ -12,4 +12,6 @@ git checkout -b "nome-da-branch" //cria uma nova branch e vai para ela
 git push origin nome-da-branch //envia os commits da sua branch local chamada nome-da-branch para a branch nome-da-branch no repositório remoto chamado origin.
 git merge nome-da-branch //mescla a branch que você está com a branch selecionada
 git clone https://github.com/seu-usuario/nome-do-repositorio.git //clone qualquer repositorio para a sua maquina
+
 git pull //atualiza seu repositório local com as últimas mudanças que estão no repositório remoto
+git branch -vv //mostra as configurações de upstream

@@ -1,17 +1,39 @@
+*COMANDOS PRINCIPAIS*
+
 git init //criar um repositorio local
+git clone https://github.com/seu-usuario/nome-do-repositorio.git //clone qualquer repositorio para a sua maquina
 git branch -M "main" //muda o nome da branch para main
 git add . || git add nome-do-arquivo.txt //adiciona os arquivos do working directory para o stage
 git commit -m "titulo do commit" //faz o commit 
+git commit -a -m "titulo do commit" //faz o commit direto já adicionando os arquivos no stage
 git status 
 git remote add origin https://github.com/seu-usuario/nome-do-repositorio.git //seu repositório local sabe q existe um repositório remoto chamado origin nessa url
-git push -u origin main //linka e sobe os arquivos do seu repositório local para o repositorio remoto e linka eles
+git push -u origin main //linka e sobe os arquivos do seu repositório local para o repositorio remoto e linka eles (upstream)
+git pull //atualiza seu repositório local com as últimas mudanças que estão no repositório remoto
 
+*COMANDOS SECUNDÁRIOS*
+
+git push origin nome-da-branch //envia os commits da sua branch local chamada nome-da-branch para a branch nome-da-branch no repositório remoto chamado origin.
+git push origin nome-da-branch --force // força o push mesmo que haja conflitos
 git branch nome-da-branch // cria uma nova branch
 git checkout nome-da-branch //troca de branch 
 git checkout -b "nome-da-branch" //cria uma nova branch e vai para ela
-git push origin nome-da-branch //envia os commits da sua branch local chamada nome-da-branch para a branch nome-da-branch no repositório remoto chamado origin.
-git merge nome-da-branch //mescla a branch que você está com a branch selecionada
-git clone https://github.com/seu-usuario/nome-do-repositorio.git //clone qualquer repositorio para a sua maquina
-
-git pull //atualiza seu repositório local com as últimas mudanças que estão no repositório remoto
 git branch -vv //mostra as configurações de upstream
+git merge nome-da-branch //mescla a branch que você está com a branch selecionada
+git branch -D nome-da-branch //deleta a branch local informada
+git push origin --delete nome-da-branch //deleta a branch remota informada
+
+*DESFAZENDO CAQUINHA*
+
+git restore nome-do-arquivo.txt || git restore . //descarta todas as alterações do working directory e volta ao staged ou ultimo commit
+git restore --source hash_do_commit . //restaura o código do commit informado para o working directory
+git reset --hard HEAD //voltar o repositório ao último commit, excluindo tudo que não está commitado
+git reset --hard HEAD~1 //move a branch para o commit anterior e exclui as mudanças do stage e do working directory.
+git reset --hard hash_do_commit //move o ponteiro da branch para o commmit que você colocou
+git revert hash_do_commit //cria um novo commit que aplica o inverso das mudanças do commit informado.
+git stash list //mostra as informações do stash
+git stash pop //aplica o stash de volta e remove ele da pilha
+git stash apply //aplica o stash de volta, mas mantém ele guardado na pilha
+git stash drop //apaga um stash específico
+
+como funcionam as tags

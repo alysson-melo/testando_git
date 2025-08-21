@@ -13,15 +13,21 @@ git pull //atualiza seu repositório local com as últimas mudanças que estão 
 
 *COMANDOS SECUNDÁRIOS*
 
+git merge nome_da_branch //mescla a branch que você está com a branch selecionada mantendo o historico
+git rebase nome_da_branch //mescla a branch que você está com a selecionada sem manter o historico
 git push origin nome-da-branch //envia os commits da sua branch local chamada nome-da-branch para a branch nome-da-branch no repositório remoto chamado origin.
 git push origin nome-da-branch --force // força o push mesmo que haja conflitos
 git branch nome-da-branch // cria uma nova branch
 git checkout nome-da-branch //troca de branch 
 git checkout -b "nome-da-branch" //cria uma nova branch e vai para ela
 git branch -vv //mostra as configurações de upstream
-git merge nome-da-branch //mescla a branch que você está com a branch selecionada
 git branch -D nome-da-branch //deleta a branch local informada
 git push origin --delete nome-da-branch //deleta a branch remota informada
+git tag v1.0 //cria uma tag leve no commit atual 
+git tag -a v1.0 -m "Mesangem" //cria uma tag anotada no commit atual contendo mensagem, autor, data etc
+git tag -a v1.0 hash_do_commit -m "Mensagem" // cria uma tag anotada no commit informado
+git tag -d v1.0 //deleta a tag informada
+git tag //lista as tags existentes
 
 *DESFAZENDO CAQUINHA*
 
@@ -35,5 +41,3 @@ git stash list //mostra as informações do stash
 git stash pop //aplica o stash de volta e remove ele da pilha
 git stash apply //aplica o stash de volta, mas mantém ele guardado na pilha
 git stash drop //apaga um stash específico
-
-como funcionam as tags
